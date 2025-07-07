@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UltraFinder - Subdomain Scanner</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>🔍 UltraFinder</h1>
+    <form method="POST">
+        <input type="text" name="domain" placeholder="Enter domain (example.com)" required>
+        <button type="submit">Find Subdomains</button>
+    </form>
+
+    {{ if .Domain }}
+    <h2>Results for: {{ .Domain }}</h2>
+    <ul>
+        {{ range .Subdomains }}
+        <li>{{ . }}</li>
+        {{ end }}
+    </ul>
+    {{ end }}
+</body>
+</html>
